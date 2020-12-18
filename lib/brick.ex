@@ -118,15 +118,28 @@ defmodule Tetris.Brick do
     ]
   end
 
-  def to_string(brick) do
+  def prepare(brick) do
     brick
     |> shape
+  end
+
+  def to_string(brick) do
+    brick
+    |> prepare
     |> Points.to_string
+  end
+
+  defimpl Inspect, for: Tetris.Brick do
+    import Inspect.Algebra
+
+    def inspect(brick, _opts) do
+      concat([Tetris.Brick.to_string(brick)])
+    end
   end
 
   def print(brick) do
     brick
-    |> shape
+    |> prepare
     |> Points.print
 
     brick
