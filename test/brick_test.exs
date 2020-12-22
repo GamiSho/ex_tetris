@@ -50,8 +50,8 @@ defmodule BrickTest do
     actual_points =
       new_brick()
       |> shape
-      |> Points.translate({1, 1})
-      |> Points.translate({0, 1})
+      |> Points.move_to_location({1, 1})
+      |> Points.move_to_location({0, 1})
 
     assert actual_points == [{3, 3}, {3, 4}, {3, 5}, {3, 6}]
   end
