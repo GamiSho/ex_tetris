@@ -12,6 +12,8 @@ defmodule Tetris.Points do
     points
     |> Enum.map(fn {x, y} -> {5 - x, y} end)
   end
+  def mirror(points, false), do: points
+  def mirror(points, true), do: mirror points
 
   def flip(points) do
     points
@@ -35,11 +37,11 @@ defmodule Tetris.Points do
   def to_string(points) do
     map =
       points
-      |> Enum.map(fn key -> {key, "◼️"} end)
+      |> Enum.map(fn key -> {key, "◉"} end)
       |> Map.new
 
     for y <- (1..4), x <- (1..4) do
-      Map.get(map, {x, y}, "◽️")
+      Map.get(map, {x, y}, "◎")
     end
     |> Enum.chunk_every(4)
     |> Enum.map(&Enum.join/1)

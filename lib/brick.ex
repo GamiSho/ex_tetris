@@ -121,6 +121,8 @@ defmodule Tetris.Brick do
   def prepare(brick) do
     brick
     |> shape
+    |> Points.rotate(brick.rotation)
+    |> Points.mirror(brick.reflection)
   end
 
   def to_string(brick) do
@@ -133,7 +135,12 @@ defmodule Tetris.Brick do
     import Inspect.Algebra
 
     def inspect(brick, _opts) do
-      concat([Tetris.Brick.to_string(brick)])
+      concat([
+        Tetris.Brick.to_string(brick),
+        "\n",
+        inspect(brick.location), " ",
+        inspect(brick.reflection), " ",
+        inspect(brick.rotation)])
     end
   end
 
