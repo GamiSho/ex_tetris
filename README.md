@@ -1,21 +1,5 @@
-# Tetris
+[![Build Status](https://travis-ci.org/GamiSho/ex_tetris.svg?branch=main)](https://travis-ci.org/GamiSho/ex_tetris)
+[![codecov](https://codecov.io/gh/GamiSho/ex_tetris/branch/main/graph/badge.svg?token=lqLJjy5FgI)](https://codecov.io/gh/GamiSho/ex_tetris)
 
 **TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `tetris` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:tetris, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/tetris](https://hexdocs.pm/tetris).
 
