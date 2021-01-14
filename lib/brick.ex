@@ -139,6 +139,8 @@ defmodule Tetris.Brick do
   def color(%{name: :o}), do: :red
   def color(%{name: :t}), do: :yellow
 
+  def x_center(), do: @x_center
+
   defimpl Inspect, for: Tetris.Brick do
     import Inspect.Algebra
 
@@ -159,6 +161,4 @@ defmodule Tetris.Brick do
 
     brick
   end
-
-  def x_center(), do: @x_center
 end
